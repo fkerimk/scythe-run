@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<RootNamespace>scythe</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PublishTrimmed>true</PublishTrimmed>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>true</SelfContained>
+		<PublishRids>win-x64;linux-x64</PublishRids>
+		<RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+		<OutputType>Exe</OutputType>
+        <Product>Scythe</Product>
+        <AssemblyTitle>scythe-run</AssemblyTitle>
+        <AssemblyName>scythe-run</AssemblyName>
+        <Authors>fkerimk</Authors> 
+        <Company>fkerimk</Company>
+        <Version>0</Version>
+        <FileVersion>0</FileVersion>
+        <Description>A versatile command runner for the Scythe framework</Description>
+        <Copyright>fkerimk</Copyright>
+        <ApplicationIcon>scythe.ico</ApplicationIcon>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="scythe-lib">
+			<HintPath>..\lib\bin\scythe-lib.dll</HintPath>
+		</Reference>
+  	</ItemGroup>
+</Project>
