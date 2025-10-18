@@ -8,9 +8,9 @@ public static class Program {
     public static void Main() {
         
         string? target = null;
-
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) target = $"{AppContext.BaseDirectory}bin/scythe/linux-x64/scythe-core.x86_64";
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) target = $"{AppContext.BaseDirectory}bin/scythe/win-x64/scythe-core.exe";
+        
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) target = Path.Join(AppContext.BaseDirectory, "bin/scythe/scythe-core.x86_64");
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) target = Path.Join(AppContext.BaseDirectory, "bin/scythe/scythe-core.exe");
 
         Console.WriteLine(target);
 
@@ -25,7 +25,7 @@ public static class Program {
             var startInfo = new ProcessStartInfo {
 
                 FileName = target,
-                Arguments = $"-mod \"./{modName}\"",
+                Arguments = $"-mod \"bin/{modName}\"",
                 WorkingDirectory = AppContext.BaseDirectory,
                 UseShellExecute = false,
                 CreateNoWindow = true
